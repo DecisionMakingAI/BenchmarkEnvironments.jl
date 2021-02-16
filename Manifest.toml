@@ -148,15 +148,9 @@ uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
 version = "0.24.10"
 =======
 deps = ["FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "StaticArrays", "Statistics", "StatsBase", "StatsFuns"]
-<<<<<<< HEAD
-git-tree-sha1 = "3d85c955190e6133966df58d3088d88234b72d12"
-uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
-version = "0.24.6"
-=======
 git-tree-sha1 = "6493eec6bfb1e578cff879b66844807e3625c83c"
 uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
 version = "0.24.4"
->>>>>>> 2020-11-30-00-21-16-426-1784418897
 
 [[DocStringExtensions]]
 deps = ["LibGit2", "Markdown", "Pkg", "Test"]
