@@ -4,6 +4,7 @@ authors = ["Scott Jordan"]
 version = "0.1.0"
 
 [deps]
+DecisionMakingEnvironments = "c2d78f9d-1393-4ac0-9d65-4613f9d81ffe"
 DiffEqBase = "2b5f629d-d688-5b77-993f-72d75c75574e"
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
@@ -17,9 +18,11 @@ OrdinaryDiffEq = "5.49"
 RecipesBase = "1.1"
 StaticArrays = "1.0"
 julia = "1.5"
+DecisionMakingEnvironments = "0.1.0"
 
 [extras]
+SafeTestsets = "1bc83da4-3b8d-516f-aca4-4fe02f6d838f"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["Test"]
+test = ["Test", "SafeTestsets"]

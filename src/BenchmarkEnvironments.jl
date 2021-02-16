@@ -4,8 +4,6 @@ using DecisionMakingEnvironments
 using RecipesBase, StaticArrays, Distributions, LinearAlgebra
 using DiffEqBase, OrdinaryDiffEq
 
-import Plots: plot
-
 include("utils.jl")
 
 # Discrete environments

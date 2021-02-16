@@ -1,6 +1,4 @@
-using BenchmarkEnvironments
-using Test
+using SafeTestsets
 
-@testset "BenchmarkEnvironments.jl" begin
-    # Write your tests here.
-end
+@safetestset "Chain Environment Tests" begin include("chain.jl") end
+
