@@ -105,7 +105,7 @@ end
 
 function create_bicycle_balance(params; maxT=60.0, dt=0.01)
 	S, A = bicycle_spaces(maxT)
-	X = S[1]
+	X = S[2]
 
 	p = (s,a)->bicycle_balance_step!(s, a, params, dt, maxT)
 	d0 = bicycle_balance_initial
@@ -119,7 +119,7 @@ function create_bicycle_balance(params; maxT=60.0, dt=0.01)
     meta[:minhorizon] = 1  # not sure the the true minimum is. This seems like a good lower bound
     meta[:maxhorizon] = ceil(Int, maxT / dt)
     meta[:discounted] = false
-	meta[:episodes] = 1000
+	meta[:episodes] = 2000
 	bplot = BicyclePlotData()
     render = (state,clearplot=false)->bicycleplot(bplot,state,clearplot)
     m = SequentialProblem(S,X,A,p,d0,meta,render)

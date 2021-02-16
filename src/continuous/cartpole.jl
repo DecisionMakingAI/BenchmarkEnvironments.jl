@@ -89,6 +89,8 @@ function create_finitetime_cartpole(params::CartPoleParams; tMax=20.0, dt=0.02, 
 	else
 		A = [-1.0 1.0]
 	end
+	
+
 	if droptime
 		X = S[2]
 		function get_outcome1(s,a,params,dt,tMax)
@@ -97,6 +99,11 @@ function create_finitetime_cartpole(params::CartPoleParams; tMax=20.0, dt=0.02, 
 			return s,x,r,γ
 		end
 		p = (s,a)->get_outcome1(s,a,params,dt,tMax)
+		function sample_initialdrop()
+			x = zeros(4)
+			return (0.0, x), x
+		end
+		d0 = sample_initialdrop
 	else
 		X = S
 		function get_outcome2(s,a,params,dt,tMax)
@@ -105,12 +112,13 @@ function create_finitetime_cartpole(params::CartPoleParams; tMax=20.0, dt=0.02, 
 			return s,s,r,γ
 		end
 		p = (s,a)->get_outcome2(s,a,params,dt,tMax)
+		function sample_initial()
+			x = zeros(4)
+			return (0.0, x), (0.0, x)
+		end
+		d0 = sample_initial
 	end
-	function sample_initial()
-		x = zeros(4)
-		return (0.0, x), x
-	end
-	d0 = sample_initial
+	
 	meta = Dict{Symbol,Any}()
     meta[:minreward] = 1.0
     meta[:maxreward] = 1.0
@@ -120,8 +128,9 @@ function create_finitetime_cartpole(params::CartPoleParams; tMax=20.0, dt=0.02, 
     meta[:minhorizon] = 9.0
     meta[:maxhorizon] = ceil(tMax / dt)
 	meta[:discounted] = false
+	meta[:episodes] = 100
 	
-	render = state->cartpoleplot(state, params)
+	render = (state,clearplot=false)->cartpoleplot(state, params)
 
 	m = SequentialProblem(S,X,A,p,d0,meta,render)
 	return m

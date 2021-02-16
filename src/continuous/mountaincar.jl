@@ -81,8 +81,9 @@ function create_finitetime_mountaincar(params::MountainCarParams; maxT=5000, Aty
     meta[:minhorizon] = 80
     meta[:maxhorizon] = ceil(Int, maxT)
 	meta[:discounted] = false
+	meta[:episodes] = 100
 	
-	render = state->mountaincarplot(state, params)
+	render = (state,clearplot=false)->mountaincarplot(state, params)
 	
 	m = SequentialProblem(S,X,A,p,d0,meta, render)
 	return m

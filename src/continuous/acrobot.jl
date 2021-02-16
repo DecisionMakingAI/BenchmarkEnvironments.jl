@@ -15,7 +15,7 @@ struct AcrobotParams{T} <:Any where {T<:Real}
 	AcrobotParams(T::Type, m1, m2, l1, l2, g) = new{T}(m1, m2, l1, l2, 0.5*l1, 0.5*l2, 1., 1., g, 1.)
 end
 
-function acrobot_finitetime(;randomize=false, maxT=20.0, dt=0.02, Atype=:Discrete, droptime=true, stochastic_start=false)
+function acrobot_finitetime(;randomize=false, maxT=400.0, dt=0.2, Atype=:Discrete, droptime=true, stochastic_start=false)
 	if randomize
 		params = random_acrobot_params()
 	else
@@ -78,8 +78,9 @@ function create_finitetime_acrobot(params::AcrobotParams; maxT=400.0, dt=0.2, At
     meta[:minhorizon] = 10
     meta[:maxhorizon] = ceil(Int, maxT / dt)
 	meta[:discounted] = false
+	meta[:episodes] = 400
 	
-	render = state->acrobotplot(state, params)
+	render = (state,clearplot=false)->acrobotplot(state, params)
 
 	m = SequentialProblem(S,X,A,p,d0,meta,render)
 	return m

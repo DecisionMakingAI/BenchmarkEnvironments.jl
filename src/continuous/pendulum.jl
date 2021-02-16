@@ -82,8 +82,9 @@ function create_pendulum_finitetime(params; maxT=20.0, dt=0.01, droptime=true, s
     meta[:minhorizon] = ceil(Int, maxT / dt)
     meta[:maxhorizon] = ceil(Int, maxT / dt)
 	meta[:discounted] = false
+	meta[:episodes] = 1000
 	
-	render = state->pendulumplot(state, params)
+	render = (state,clearplot=false)->pendulumplot(state, params)
 
 	m = SequentialProblem(S,X,A,p,d0,meta,render)
 end

@@ -5,5 +5,5 @@ include("mountaincar.jl")
 include("pinball/pinball.jl")
 include("bicycle.jl")
 include("hiv.jl")
-
 include("pendulum.jl")
+include("ballandbeam.jl")
