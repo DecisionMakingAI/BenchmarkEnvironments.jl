@@ -323,6 +323,7 @@ git-tree-sha1 = "2e486dbdd1b42b57e4833b77fc381f2d5974c1e6"
 uuid = "8913a72c-1f9b-4ce2-8d82-65094dcecaec"
 version = "0.2.0"
 
+<<<<<<< HEAD
 [[OffsetArrays]]
 git-tree-sha1 = "a416e2f267e2c8729f25bcaf1ce19d2893faf393"
 uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
@@ -334,11 +335,14 @@ git-tree-sha1 = "a3af51a47ebffb2d1f9a1cb2a7a719f66f6f499d"
 uuid = "8913a72c-1f9b-4ce2-8d82-65094dcecaec"
 version = "0.3.3"
 
+=======
+>>>>>>> 2020-12-06-00-25-01-821-4211454581
 [[OffsetArrays]]
 deps = ["Adapt"]
 git-tree-sha1 = "45d5e495ab559357aee8cb1dfb8c12b0787d4545"
 uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
 version = "1.4.1"
+<<<<<<< HEAD
 
 [[OffsetArrays]]
 deps = ["Adapt"]
@@ -357,6 +361,8 @@ git-tree-sha1 = "45d5e495ab559357aee8cb1dfb8c12b0787d4545"
 uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
 version = "1.4.1"
 >>>>>>> 2020-12-06-00-25-59-660-1664414642
+=======
+>>>>>>> 2020-12-06-00-25-01-821-4211454581
 
 [[OpenSpecFun_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Pkg"]
@@ -425,6 +431,7 @@ deps = ["LinearAlgebra", "LoopVectorization", "VectorizationBase"]
 git-tree-sha1 = "cbb63d3f1b631021117ef3b98b04d5556b354ee5"
 uuid = "f2c3362d-daeb-58d1-803e-2bc74f2840b4"
 version = "0.1.5"
+<<<<<<< HEAD
 
 [[RecursiveFactorization]]
 deps = ["LinearAlgebra", "LoopVectorization", "VectorizationBase"]
@@ -435,6 +442,8 @@ version = "0.1.5"
 >>>>>>> 2020-12-13-00-35-16-428-1431910837
 =======
 >>>>>>> 2020-12-06-00-25-59-660-1664414642
+=======
+>>>>>>> 2020-12-06-00-25-01-821-4211454581
 
 [[Reexport]]
 git-tree-sha1 = "57d8440b0c7d98fc4f889e478e80f268d534c9d5"
@@ -512,6 +521,7 @@ uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 [[SparseDiffTools]]
 deps = ["Adapt", "ArrayInterface", "Compat", "DataStructures", "FiniteDiff", "ForwardDiff", "LightGraphs", "LinearAlgebra", "Requires", "SparseArrays", "VertexSafeGraphs"]
 git-tree-sha1 = "a8fe04fc9048d1c1e25d4b13ec374987b0599b7b"
+<<<<<<< HEAD
 uuid = "47a9eef4-7e08-11e9-0b38-333d64bd3804"
 version = "1.10.2"
 
@@ -529,6 +539,10 @@ git-tree-sha1 = "a8fe04fc9048d1c1e25d4b13ec374987b0599b7b"
 uuid = "47a9eef4-7e08-11e9-0b38-333d64bd3804"
 version = "1.10.2"
 >>>>>>> 2020-12-06-00-25-59-660-1664414642
+=======
+uuid = "47a9eef4-7e08-11e9-0b38-333d64bd3804"
+version = "1.10.2"
+>>>>>>> 2020-12-06-00-25-01-821-4211454581
 
 [[SpecialFunctions]]
 deps = ["OpenSpecFun_jll"]
