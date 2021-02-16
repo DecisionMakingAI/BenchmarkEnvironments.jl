@@ -12,12 +12,10 @@ RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
 StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 
 [compat]
-OrdinaryDiffEq = "5.46"
-DiffEqBase = "6.52"
 DiffEqBase = "6.53"
 OrdinaryDiffEq = "5.49"
-StaticArrays = "1.0"
 RecipesBase = "1.1"
+StaticArrays = "1.0"
 julia = "1.5"
 
 [extras]
