@@ -129,6 +129,7 @@ function create_finitetime_cartpole(params::CartPoleParams; tMax=20.0, dt=0.02, 
     meta[:maxhorizon] = ceil(tMax / dt)
 	meta[:discounted] = false
 	meta[:episodes] = 100
+	meta[:threshold] = 900
 	
 	render = (state,clearplot=false)->cartpoleplot(state, params)
 

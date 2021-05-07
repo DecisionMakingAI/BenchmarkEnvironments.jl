@@ -79,6 +79,7 @@ function create_finitetime_acrobot(params::AcrobotParams; maxT=400.0, dt=0.2, At
     meta[:maxhorizon] = ceil(Int, maxT / dt)
 	meta[:discounted] = false
 	meta[:episodes] = 400
+	meta[:threshold] = -10.0
 	
 	render = (state,clearplot=false)->acrobotplot(state, params)
 

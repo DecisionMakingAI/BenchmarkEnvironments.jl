@@ -212,6 +212,7 @@ function create_ballandbeam_finitetime(params; maxT=20.0, dt=0.05, droptime=true
     meta[:maxhorizon] = numT
 	meta[:discounted] = false
 	meta[:episodes] = 200
+    
 	render = (state,clearplot=false)->ballbeamplot(state, params)
 
 	m = SequentialProblem(S,X,A,p,d0,meta,render)

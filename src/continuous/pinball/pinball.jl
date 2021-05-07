@@ -49,15 +49,15 @@ function pinball_easy()
 end
 
 function pinball_medium()
-    return pinball_finitetime("pinball_medium.cfg", maxT=2000, stochastic_start=true, randomize=true, num_episodes=400)
+    return pinball_finitetime("pinball_medium.cfg", maxT=2000, stochastic_start=true, randomize=true, num_episodes=400, threshold=8500)
 end
 
 function pinball_hard()
-    return pinball_finitetime("pinball_hard.cfg", maxT=5000, stochastic_start=true, randomize=true, num_episodes=1000)
+    return pinball_finitetime("pinball_hard.cfg", maxT=5000, stochastic_start=true, randomize=true, num_episodes=1000, threshold=8000)
 end
 
 
-function pinball_finitetime(config::String; maxT=1000, stochastic_start=false, randomize=false, num_episodes=100)
+function pinball_finitetime(config::String; maxT=1000, stochastic_start=false, randomize=false, num_episodes=100, threshold=9000)
     X = zeros((4,2))
     X[1,:] .= [0., 1.]  # x range
 	X[2,:] .= [0., 1.]  # y range
@@ -91,6 +91,7 @@ function pinball_finitetime(config::String; maxT=1000, stochastic_start=false, r
     meta[:maxhorizon] = ceil(maxT / (dt * 20))
     meta[:discounted] = false
     meta[:episodes] = num_episodes
+    meta[:threshold] = threshold
     render = (state,clearplot=false)->pinballplot(state, obstacles, conf)
     m = SequentialProblem(S,X,A,p,d0,meta,render)
     

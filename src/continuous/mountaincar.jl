@@ -82,6 +82,7 @@ function create_finitetime_mountaincar(params::MountainCarParams; maxT=5000, Aty
     meta[:maxhorizon] = ceil(Int, maxT)
 	meta[:discounted] = false
 	meta[:episodes] = 100
+	meta[:threshold] = -150  # maybe this should depend on environment params
 	
 	render = (state,clearplot=false)->mountaincarplot(state, params)
 	
