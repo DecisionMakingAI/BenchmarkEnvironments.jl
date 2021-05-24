@@ -204,14 +204,15 @@ function create_ballandbeam_finitetime(params; maxT=20.0, dt=0.05, droptime=true
     numT = ceil(Int, maxT / dt)
 	meta = Dict{Symbol,Any}()
     meta[:minreward] = -22.21  # max speed and distance from goal on longest beam
-    meta[:maxreward] = 0.0
-    meta[:minreturn] = -22.21 * numT
-    meta[:maxreturn] = 0.0
+    meta[:maxreward] = 0 
+    meta[:minreturn] = -2000.0 # chosen experimentally as a lower bound (more likely to be around 1100)
+    meta[:maxreturn] = -10.0 # chosen experimentall as an upper bound. Highest I've seen is low -20s
     meta[:stochastic] = false
     meta[:minhorizon] = numT
     meta[:maxhorizon] = numT
 	meta[:discounted] = false
-	meta[:episodes] = 200
+	meta[:episodes] = 10000
+    meta[:threshold] = -50  # somewhat generous threshold. Should quickly balance the ball around the goal location
     
 	render = (state,clearplot=false)->ballbeamplot(state, params)
 
