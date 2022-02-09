@@ -2,7 +2,7 @@ module BenchmarkEnvironments
 
 using DecisionMakingEnvironments
 using RecipesBase, StaticArrays, Distributions, LinearAlgebra
-using DiffEqBase, OrdinaryDiffEq
+using SciMLBase
 
 include("utils.jl")
 
