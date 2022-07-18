@@ -191,10 +191,10 @@ end
 	l1, l2 = params.l1, params.l2
 	maxlen = (l1+l2)*1.2
 	x1,y1 = 0., 0.
-	x2 = x1 - sin(theta1)*l1
-	y2 = y1 - cos(theta1)*l1
-	x3 = x2 - sin(theta1 + theta2)*l2
-	y3 = y2 - cos(theta1 + theta2)*l2
+	x2 = x1 + cos(theta1 - π/2)*l1
+	y2 = y1 + sin(theta1 - π/2)*l1
+	x3 = x2 + cos(theta1 + theta2 - π/2)*l2
+	y3 = y2 + sin(theta1 + theta2 - π/2)*l2
 
 	legend := false
 	xlims := (-maxlen, maxlen)
