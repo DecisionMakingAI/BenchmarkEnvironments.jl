@@ -172,11 +172,9 @@ function create_simple_chain_finitetime(num_states::Int; stochastic=false, failc
     meta = Dict{Symbol,Any}()
 
     if reward == :negative    
-        # rfun = (s,a,s′)->-1.0#chain_scaledreward(s,a,s′,1.0)#Float64(-1.0)
         meta[:minreward] = -1.0
         meta[:maxreward] = -1.0
     elseif reward == :sparse
-        # rfun = (s,a,s′)->chain_sparsereward(s,a,s′,num_states)
         meta[:minreward] = 0.0
         meta[:maxreward] = 100.0
     else
@@ -196,12 +194,6 @@ function create_simple_chain_finitetime(num_states::Int; stochastic=false, failc
     end 
     
 
-    # if !stochastic
-    #     pfun = (s,a)->finitehorizon_chainstep(tfun, rfun, s, a, maxT, S[2], discount) 
-    # else
-    #     pfun = (s,a)->finitehorizon_chainstep(tfun, rfun, s, simplechain_perturb_action(a,failchance), maxT, S[2], discount) 
-    # end
-
     if !stochastic
         pfun = (s,a)->finitehorizon_chainstep2(tfun, reward, s, a, maxT, S[2], discount) 
     else
@@ -210,14 +202,10 @@ function create_simple_chain_finitetime(num_states::Int; stochastic=false, failc
 
     if droptime
 		X = S[2]
-        # function get_outcome1(pfun,s,a)
         function get_outcome1(pfun, s,a)
-            # @code_warntype (pfun(s,a))
             t, x, r, γ = pfun(s,a)
-            # t, x, r, γ = pfun(s,a)
 			s = (t,x)
             return s,x,r,γ
-            # return s,s[2],-1.0,1.0
 		end
         p = (s,a)->get_outcome1(pfun, s, a)
         d0 = ()->((1,1),1)
