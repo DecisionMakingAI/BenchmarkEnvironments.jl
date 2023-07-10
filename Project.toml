@@ -1,7 +1,7 @@
 name = "BenchmarkEnvironments"
 uuid = "d3e05d68-52be-433b-950f-1fabddef5ccc"
 authors = ["Scott Jordan"]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 DecisionMakingEnvironments = "c2d78f9d-1393-4ac0-9d65-4613f9d81ffe"
@@ -13,11 +13,14 @@ SciMLBase = "0bca4576-84f4-4d90-8ffe-ffa030f20462"
 StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 
 [compat]
-DecisionMakingEnvironments = ">=0.1.0"
-Distributions = ">=0.23"
-RecipesBase = ">=1.1"
-StaticArrays = ">=1.0"
-julia = ">=1.5"
+DecisionMakingEnvironments = "0.1, 0.2"
+Distributions = "0.23, 0.24, 0.25"
+OrdinaryDiffEq = "6"
+RecipesBase = "1.1"
+SafeTestsets = "0.1"
+SciMLBase = "1"
+StaticArrays = "1"
+julia = "1.6"
 
 [extras]
 SafeTestsets = "1bc83da4-3b8d-516f-aca4-4fe02f6d838f"
