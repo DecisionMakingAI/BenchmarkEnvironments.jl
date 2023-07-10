@@ -1,7 +1,7 @@
 name = "BenchmarkEnvironments"
 uuid = "d3e05d68-52be-433b-950f-1fabddef5ccc"
 authors = ["Scott Jordan"]
-version = "0.1.2"
+version = "0.1.1"
 
 [deps]
 DecisionMakingEnvironments = "c2d78f9d-1393-4ac0-9d65-4613f9d81ffe"
