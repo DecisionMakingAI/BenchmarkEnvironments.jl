@@ -171,7 +171,7 @@ end
 
 	legend := false
 	xlims := (-1.2, 0.5)
-	ylims := (min(ypts...), max(ypts...))
+	ylims := (min(ypts...)-0.05, max(ypts...)+0.05)
 	grid := false
 	ticks := nothing
 	foreground_color := :white
